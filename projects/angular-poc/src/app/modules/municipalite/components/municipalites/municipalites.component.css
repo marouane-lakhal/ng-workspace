@@ -1,0 +1,38 @@
+/*table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  
+  .sortable tr th {
+      cursor: pointer;
+  }
+  
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  .mat-select-trigger { min-width: 220px; }*/
+
+  .municipalite {
+    width: 80%;
+    margin: auto !important ;
+  }
+
+  table {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  td, th {
+    width: 25%;
+  }

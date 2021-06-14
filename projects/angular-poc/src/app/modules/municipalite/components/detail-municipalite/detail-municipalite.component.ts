@@ -25,7 +25,7 @@ export class DetailMunicipaliteComponent implements OnInit {
 
   getMunicipalite() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.municipaliteService.getMunicipalites().subscribe(mun => mun.filter(m => { if (m.id === id) { this.municipalite = m } }));
+    this.municipaliteService.getMunicipalite(id).subscribe(mun => this.municipalite = mun );
   }
 
   goBack() {

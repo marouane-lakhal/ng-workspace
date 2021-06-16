@@ -1,6 +1,6 @@
 export interface Municipalite {
-    code: string;
-    id: number;
-    nom: string;
-    version: number;
-  }
+  id: number | null;
+  code: string;
+  nom: string;
+  version?: number;
+}

@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
-import { Municipalite } from "../models/municipalite";
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-const endpoint = 'https://communs.devj.si.electionsquebec.qc.ca/crem/rest/municipalites';
+import { environment } from 'projects/angular-poc/src/environments/environment';
+
+import { Municipalite } from "../models/municipalite";
+
+const endpoint = environment.municipaliteUrl;
 
 @Injectable({
   providedIn: 'root'

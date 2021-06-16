@@ -9,6 +9,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
+import { UtilsService } from '../../../shared/services/utils.service';
+
 
 
 @Component({
@@ -16,7 +18,7 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './municipalites.component.html',
   styleUrls: ['./municipalites.component.css']
 })
-export class MunicipalitesComponent implements AfterViewInit  {
+export class MunicipalitesComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -24,9 +26,11 @@ export class MunicipalitesComponent implements AfterViewInit  {
   displayedColumns: string[] = ['id', 'code', 'nom'];
   dataSource!: MatTableDataSource<Municipalite>;
 
-  
 
-  constructor(private municipaliteService: MunicipaliteService,
+
+  constructor(
+    private municipaliteService: MunicipaliteService,
+    private utilsService: UtilsService,
     private location: Location) {
 
   }
@@ -35,7 +39,7 @@ export class MunicipalitesComponent implements AfterViewInit  {
   //   this.getMunicipalites();
   // }
 
-  ngAfterViewInit () {
+  ngAfterViewInit() {
     this.getMunicipalites();
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
@@ -43,7 +47,7 @@ export class MunicipalitesComponent implements AfterViewInit  {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim();
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
@@ -58,6 +62,7 @@ export class MunicipalitesComponent implements AfterViewInit  {
         this.dataSource = new MatTableDataSource(mun);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        this.dataSource.filterPredicate = (data: Municipalite, filter: string) => !filter || this.utilsService.normaliserRecherche(data.nom).includes(this.utilsService.normaliserRecherche(filter));
       }
     );
   }

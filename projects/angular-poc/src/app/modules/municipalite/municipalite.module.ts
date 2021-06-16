@@ -11,13 +11,18 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { MatIconModule } from "@angular/material/icon";
+import { FormulaireMunicipaliteComponent } from './components/formulaire-municipalite/formulaire-municipalite.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
 @NgModule({
   declarations: [
     MunicipalitesComponent,
-    DetailMunicipaliteComponent
+    DetailMunicipaliteComponent,
+    FormulaireMunicipaliteComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +32,10 @@ import { MatInputModule } from "@angular/material/input";
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule, 
+    MatProgressSpinnerModule
   ],
   exports: [
     MunicipalitesComponent

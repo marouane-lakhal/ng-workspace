@@ -1,0 +1,26 @@
+<div class="formulaire">
+    <h1>Formulaire d'une municipalité</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <table>
+            <tr>
+                <td><label>Code municipalité:</label></td>
+                <td><input type="text" formControlName="code"></td>
+            </tr>
+            <tr>
+                <td><label>Nom municipalité:</label></td>
+                <td><input type="text" formControlName="nom"></td>
+            </tr>
+
+        </table>
+        <p>
+            <button type="submit" [disabled]="!form.valid">Submit</button>
+        </p>
+
+        <p>Form value: {{form.value}}</p>
+        <p>Form status: {{form.status}}</p>
+        <div *ngIf="nom.errors?.municipaliteExiste">
+            la municipalité est existante
+        </div>
+
+    </form>
+</div>

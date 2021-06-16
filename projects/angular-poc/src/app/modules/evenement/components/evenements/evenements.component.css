@@ -1,0 +1,20 @@
+.evenement {
+    width: 80%;
+    margin: auto !important;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    margin: auto;
+}
+
+td,
+th {
+    width: 25%;
+}

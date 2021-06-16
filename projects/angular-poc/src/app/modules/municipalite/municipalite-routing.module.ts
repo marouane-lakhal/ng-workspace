@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailMunicipaliteComponent } from './components/detail-municipalite/detail-municipalite.component';
 
 const routes: Routes = [
-  {path: 'detail/:id', component: DetailMunicipaliteComponent}
+  {path: 'municipalite/detail/:id', component: DetailMunicipaliteComponent}
 ];
 
 @NgModule({

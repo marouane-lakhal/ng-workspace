@@ -1,0 +1,39 @@
+<div class=content-box>
+    <fieldset>
+        <legend>
+            <h2>Recherche</h2>
+        </legend>
+
+        <div class="content">
+            <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+
+                <mat-form-field appearance="outline" class="search-input">
+                    <mat-label>Date de scrutin</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dateScrutin">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="search-input">
+                    <mat-label>Municipalité</mat-label>
+                    <input matInput placeholder="" formControlName="municipalite">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="search-input">
+                    <mat-label>Type </mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option></mat-option>
+                        <mat-option *ngFor="let type of typeEvenements" [value]="type">
+                            {{typeEvenementLabels[type]}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <button class="button" mat-raised-button color="primary" type="submit">Rechercher</button>
+                <button class="button" mat-raised-button color="primary" type="reset" (click)="onReset()">Effacer</button>
+
+            </form>
+        </div>
+    </fieldset>
+</div>

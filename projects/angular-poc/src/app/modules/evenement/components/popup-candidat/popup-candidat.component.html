@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Ajout d'un candidat</h1>
+<div mat-dialog-content>
+    <div [formGroup]=formCandidat>
+        <mat-form-field appearance=outline class="input-candidat">
+            <mat-label i18n>Prénom</mat-label>
+            <input matInput type="text" i18n-placeholder placeholder="Prénom candidat" formControlName=prenom>
+            <mat-error *ngIf="prenom && prenom.hasError('required')">
+                Le prénom est <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance=outline class="input-candidat">
+            <mat-label i18n>Nom</mat-label>
+            <input matInput type="text" i18n-placeholder placeholder="Nom candidat" formControlName=nom>
+            <mat-error *ngIf="nom && nom.hasError('required')">
+                Le nom est <strong>obligatoire</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="ajouterCandidat()"
+        [disabled]="!formCandidat.valid">Appliquer</button>
+    <button mat-raised-button color="primary" (click)="annuler()">Annuler</button>
+    <!-- <button mat-button [mat-dialog-close]=formCandidat.value cdkFocusInitial>Fermer</button> -->
+</div>

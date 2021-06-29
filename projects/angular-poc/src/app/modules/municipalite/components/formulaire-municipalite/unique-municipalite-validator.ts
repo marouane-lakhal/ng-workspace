@@ -15,18 +15,12 @@ export class UniqueMunicipaliteValidator {
 
         // ignore new term if same as previous term
         distinctUntilChanged(),
-        delay(5000),
+        
         map(municipalites => municipalites.some(mun => mun.nom === control.value)), tap(already => console.log(already + " " + control.value)),
         map(alreadyExist => (alreadyExist ? { municipaliteExiste: true } : null)), catchError(() => of(null)), tap(r => console.log(r)));
     };
   }
 
   constructor(private municipaliteService: MunicipaliteService) { }
-
-  validate(control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
-    return this.municipaliteService.getMunicipalites().pipe(
-      map(municipalites => municipalites.some(mun => mun.nom === control.value)),
-      map(alreadyExist => (alreadyExist ? { municipaliteExiste: true } : null)), catchError(() => of(null)));
-  }
 
 }

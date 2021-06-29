@@ -2,7 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 import { TypeEvenement, TypeEvenementLabels } from '../../../shared/models/TypeEvenement';
-import { CriteresRechercheEvenement } from '../../models/CriteresRechercheEvenement';
+import { RechercheEvenement } from '../../models/RechercheEvenement';
+
 import { EvenementService } from '../../services/evenement.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { EvenementService } from '../../services/evenement.service';
 })
 export class RechercheEvenementComponent implements OnInit {
 
-  @Output() criteres = new EventEmitter<CriteresRechercheEvenement>();
+  @Output() criteres = new EventEmitter<RechercheEvenement>();
 
 
   typeEvenementLabels = TypeEvenementLabels;
@@ -27,12 +28,12 @@ export class RechercheEvenementComponent implements OnInit {
   }
 
   form = this.fb.group({
-    dateScrutin: '',
-    municipalite: '',
-    type: ''
+    dateScrutin: null,
+    municipalite: null,
+    typeEvenement: null
   });
 
-  onSubmit(criteresRecherche: CriteresRechercheEvenement) {
+  onSubmit(criteresRecherche: RechercheEvenement) {
     this.criteres.emit(criteresRecherche);
   }
 

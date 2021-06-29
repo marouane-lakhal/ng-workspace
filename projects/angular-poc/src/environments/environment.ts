@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  municipaliteUrl: 'https://communs.devj.si.electionsquebec.qc.ca/crem/rest/municipalites'
+  municipaliteUrl: 'https://communs.devj.si.electionsquebec.qc.ca/crem/rest/municipalites',
+  evenementUrl: 'https://communs.devj.si.electionsquebec.qc.ca/crem/rest/evenements',
+  // evenementUrl: 'http://localhost:8180/crem/rest/evenements'
 };
 
 /*

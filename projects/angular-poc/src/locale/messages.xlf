@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2"
+  xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr-CA" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="menuMunicipalite" datatype="html">
+        <source>Liste des municipalités</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/core/components/header/header.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <note priority="1" from="description">valeur menu municipalité</note>
+        <note priority="1" from="meaning">menu municipalite</note>
+      </trans-unit>
+      <trans-unit id="menuEvenement" datatype="html">
+        <source>Liste des événements</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/core/components/header/header.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">valeur menu evenement</note>
+        <note priority="1" from="meaning">menu evenement</note>
+      </trans-unit>
+      <trans-unit id="menuSaisieMunicipalite" datatype="html">
+        <source>Saisir municipalité</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/core/components/header/header.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">valeur menu saisie municipalité</note>
+        <note priority="1" from="meaning">menu saisie municipalite</note>
+      </trans-unit>
+      <trans-unit id="8092624616798290578" datatype="html">
+        <source> Détail de l&apos;événément </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5042701027787286124" datatype="html">
+        <source>Municipalité</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/recherche-evenement/recherche-evenement.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6112344694016575620" datatype="html">
+        <source>Date scrutin</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5986314437717359944" datatype="html">
+        <source>Type événement</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8875131062298964796" datatype="html">
+        <source> Liste des candidats </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2038082152527034775" datatype="html">
+        <source> Nom </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/municipalites/municipalites.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8006004723244607897" datatype="html">
+        <source> Prénom </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8219788749266108969" datatype="html">
+        <source> Votes </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/detail-evenement/detail-evenement.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="223717011534130320" datatype="html">
+        <source>Liste des événéments</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/evenements/evenements.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6088874795568159582" datatype="html">
+        <source> Date Scrutin </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/evenements/evenements.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3524749536670146131" datatype="html">
+        <source> Municipalité </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/evenements/evenements.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7840301863034787689" datatype="html">
+        <source> Type </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/evenements/evenements.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9112700266199730219" datatype="html">
+        <source> Recherche </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/recherche-evenement/recherche-evenement.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1349983789426390174" datatype="html">
+        <source>Date de scrutin</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/recherche-evenement/recherche-evenement.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7136714849371279335" datatype="html">
+        <source>Type </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/evenement/components/recherche-evenement/recherche-evenement.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8440312843126781337" datatype="html">
+        <source>id: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/detail-municipalite/detail-municipalite.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9042321780141712238" datatype="html">
+        <source>code: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/detail-municipalite/detail-municipalite.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7830466766102621867" datatype="html">
+        <source>nom: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/detail-municipalite/detail-municipalite.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2345034438628578004" datatype="html">
+        <source>Formulaire d&apos;une municipalité</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/formulaire-municipalite/formulaire-municipalite.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5156529861055653987" datatype="html">
+        <source>Code municipalité</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/formulaire-municipalite/formulaire-municipalite.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2928368075692938426" datatype="html">
+        <source>Nom municipalité</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/formulaire-municipalite/formulaire-municipalite.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1880150961138488122" datatype="html">
+        <source> la municipalité est existante </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/formulaire-municipalite/formulaire-municipalite.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3482333580698823879" datatype="html">
+        <source>Liste des municipalités</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/municipalites/municipalites.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8829497237648100098" datatype="html">
+        <source>Filter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/municipalites/municipalites.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8539887888950756389" datatype="html">
+        <source>Nom muncipalité</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/municipalites/municipalites.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1484691810377259440" datatype="html">
+        <source> ID </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/municipalites/municipalites.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4099656183663309532" datatype="html">
+        <source> Code </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/municipalites/municipalites.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3202104499700317527" datatype="html">
+        <source>Aucune donnée ne correspond au filtre &quot;<x id="INTERPOLATION" equiv-text="{{input.value}}"/>
+&quot;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/angular-poc/src/app/modules/municipalite/components/municipalites/municipalites.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

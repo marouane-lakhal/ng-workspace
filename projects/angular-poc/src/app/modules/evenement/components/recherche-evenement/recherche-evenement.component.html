@@ -1,28 +1,31 @@
 <div class=content-box>
-    <fieldset>
-        <legend>
-            <h2>Recherche</h2>
-        </legend>
 
+
+    <mat-expansion-panel togglePosition="before" expanded=true>
+        <mat-expansion-panel-header style="background-color: #f2f2f2" expandedHeight="50px">
+            <mat-panel-title i18n>
+                Recherche
+            </mat-panel-title>
+        </mat-expansion-panel-header>
         <div class="content">
             <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
 
 
                 <mat-form-field appearance="outline" class="search-input">
-                    <mat-label>Date de scrutin</mat-label>
+                    <mat-label i18n>Date de scrutin</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="dateScrutin">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="search-input">
-                    <mat-label>Municipalité</mat-label>
+                    <mat-label i18n>Municipalité</mat-label>
                     <input matInput placeholder="" formControlName="municipalite">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="search-input">
-                    <mat-label>Type </mat-label>
-                    <mat-select formControlName="type">
+                    <mat-label i18n>Type </mat-label>
+                    <mat-select formControlName="typeEvenement">
                         <mat-option></mat-option>
                         <mat-option *ngFor="let type of typeEvenements" [value]="type">
                             {{typeEvenementLabels[type]}}
@@ -35,5 +38,6 @@
 
             </form>
         </div>
-    </fieldset>
+    </mat-expansion-panel>
+
 </div>

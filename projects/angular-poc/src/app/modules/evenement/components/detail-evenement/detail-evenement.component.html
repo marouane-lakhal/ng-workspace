@@ -1,0 +1,128 @@
+<div [formGroup]=form class="content-box">
+
+    <mat-expansion-panel togglePosition="before" expanded=true>
+        <mat-expansion-panel-header style="background-color: #f2f2f2" expandedHeight="50px">
+            <mat-panel-title i18n>
+                Détail de l'événément
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="content">
+
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline" formGroupName=municipalite style="width: 500px;">
+                            <mat-label i18n>Municipalité</mat-label>
+                            <input matInput readonly type="text" formControlName="nom">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline" formGroupName=municipalite>
+                            <mat-label i18n>Code</mat-label>
+                            <input matInput readonly type="text" formControlName="code">
+                        </mat-form-field>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label i18n>Date scrutin</mat-label>
+                            <input matInput type="text" readonly formControlName="dateScrutin"
+                                [value]="form.get('dateScrutin')?.value | customDate">
+                            <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker disabled=true></mat-datepicker> -->
+                        </mat-form-field>
+                        <!-- <mat-form-field appearance="outline">
+                            <mat-label i18n>Type événement</mat-label>
+                            <mat-select formControlName="typeEvenement" [disabled]=true>
+                                <mat-option></mat-option>
+                                <mat-option disabled *ngFor="let type of typeEvenements" [value]="type">
+                                    {{typeEvenementLabels[type]}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field> -->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </mat-expansion-panel>
+</div>
+
+<div class="candidat">
+    <mat-expansion-panel class="candidatPanel" togglePosition="before" expanded=true style="width: 80%; margin: auto;">
+        <mat-expansion-panel-header style="background-color: #f2f2f2; " expandedHeight="50px">
+            <mat-panel-title i18n>
+                Liste des candidats
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="padding: 0px;" [fixedLayout]="true">
+
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nom">
+                <mat-header-cell *matHeaderCellDef i18n> Nom </mat-header-cell>
+                <mat-cell *matCellDef="let element"> <a (click)="openDialogUpdateCandidate(element)">{{element.nom}}
+                    </a></mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="prenom">
+                <mat-header-cell *matHeaderCellDef i18n> Prénom </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.prenom}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nbrVotes">
+                <mat-header-cell *matHeaderCellDef i18n> Votes </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <mat-form-field  style="width: 150px;">
+                        <input matInput type="number" [value]="element.nbrVotes" 
+                            (input)="element.nbrVotes=getValue($event)">
+                    </mat-form-field>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="buttons">
+                <mat-footer-cell *matFooterCellDef colspan="3">
+                    <button class="button" mat-raised-button color="primary"
+                        (click)="openDialogAddCandidate()">Ajouter</button>
+                    <button class="button" mat-raised-button color="primary"
+                        (click)="deleteCandidate()">Supprimer</button>
+                </mat-footer-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            <mat-footer-row *matFooterRowDef="['buttons']"></mat-footer-row>
+
+        </mat-table>
+    </mat-expansion-panel>
+    <div class="action-box">
+        <table style="background-color: #f2f2f2">
+            <tr>
+                <td><button style="margin-left:10px" class="button" mat-raised-button color="primary"
+                        routerLink="/evenements">Retour
+                        à la
+                        liste</button></td>
+                <td align="end"><button class="button" mat-raised-button color="primary"
+                        (click)="onSubmit()">Sauvegarder</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>

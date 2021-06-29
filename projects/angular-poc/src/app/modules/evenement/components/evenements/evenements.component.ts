@@ -3,8 +3,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
-import { CriteresRechercheEvenement } from '../../models/CriteresRechercheEvenement';
+import { delay } from 'rxjs/operators';
+import { TypeEvenementLabels } from '../../../shared/models/TypeEvenement';
+
 import { Evenement } from '../../models/evenement';
+import { RechercheEvenement } from '../../models/RechercheEvenement';
 import { EvenementService } from '../../services/evenement.service';
 
 @Component({
@@ -16,33 +19,42 @@ export class EvenementsComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  typeEvenementLabels = TypeEvenementLabels;
 
-  displayedColumns: string[] = ['dateScrutin', 'municipalite', 'type'];
+  displayedColumns: string[] = ['dateScrutin', 'municipalite', 'typeEvenement'];
   dataSource!: MatTableDataSource<Evenement>;
 
   constructor(
     private evenementService: EvenementService
   ) {
-    this.evenementService.getEvenenemt().subscribe(
-      result => this.dataSource = new MatTableDataSource(result)
-    );
+
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-    this.dataSource.sortingDataAccessor = (evenement, property) => {
-      switch (property) {
-        case 'municipalite': return evenement.municipalite.nom;
-        default: return evenement[property]; 
+    this.evenementService.getEvenements().subscribe(
+      result => {
+        this.dataSource = new MatTableDataSource(result);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        this.dataSource.sortingDataAccessor = (evenement, property) => {
+          switch (property) {
+            case 'municipalite': return evenement.municipalite.nom;
+            default: return evenement[property];
+          }
+        }
       }
-    }
+    );
+
   }
 
-  onRechercheSubmit(criteresRecherche: CriteresRechercheEvenement) {
+  onRechercheSubmit(criteresRecherche: RechercheEvenement) {
     this.evenementService.rechercherEvenements(criteresRecherche).subscribe(
-      result => { this.dataSource.data = result }
+      result => {
+        this.dataSource.data = result
+      }
     );
+
+    //this.evenementService.getEvenementTest().subscribe();
   }
 
 }

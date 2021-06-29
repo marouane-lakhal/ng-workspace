@@ -1,4 +1,5 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { getLocaleCurrencyCode } from '@angular/common';
+import { Component, DEFAULT_CURRENCY_CODE, Inject, Injectable, LOCALE_ID, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 import { Municipalite } from '../../models/municipalite';
 import { MunicipaliteService } from '../../services/municipalite.service';
@@ -13,11 +14,15 @@ import { UniqueMunicipaliteValidator } from './unique-municipalite-validator';
 
 export class FormulaireMunicipaliteComponent implements OnInit {
 
-
+  date: Date = new Date();
+  amount: number = 0.259;
+  c: string | null = getLocaleCurrencyCode(this.locale);
 
   constructor(
     private formBuilder: FormBuilder,
-    private municipaliteService: MunicipaliteService) { }
+    private municipaliteService: MunicipaliteService,
+    @Inject(LOCALE_ID) public locale: string,
+    @Inject(DEFAULT_CURRENCY_CODE) public codeCur: string) { }
 
   form = this.formBuilder.group({
     code: ["", Validators.required],
@@ -27,20 +32,11 @@ export class FormulaireMunicipaliteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get aliases() {
-    return this.form.get('aliases') as FormArray;
-  }
-
-  addAlias() {
-    this.aliases.push(this.formBuilder.control(''));
-  }
-
   get nom() {
     return this.form.get('nom') as FormControl;
   }
 
   onSubmit() {
     console.log(this.form.value);
-    this.form.get("code")?.setValue(11125);
   }
 }

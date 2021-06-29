@@ -1,26 +1,34 @@
-<div class="formulaire">
-    <h1>Formulaire d'une municipalité</h1>
+<div class="example-form">
+    <h1 i18n>Formulaire d'une municipalité</h1>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <table>
-            <tr>
-                <td><label>Code municipalité:</label></td>
-                <td><input type="text" formControlName="code"></td>
-            </tr>
-            <tr>
-                <td><label>Nom municipalité:</label></td>
-                <td><input type="text" formControlName="nom"></td>
-            </tr>
 
-        </table>
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label i18n>Code municipalité</mat-label>
+            <input matInput type="text" formControlName="code">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label i18n>Nom municipalité</mat-label>
+            <input matInput type="text" formControlName="nom">
+        </mat-form-field>
+
+        <div *ngIf="nom.errors?.municipaliteExiste" i18n>
+            la municipalité est existante
+        </div>
+
         <p>
             <button type="submit" [disabled]="!form.valid">Submit</button>
         </p>
 
-        <p>Form value: {{form.value}}</p>
+        <p>Form value: {{form.value | json}}</p>
         <p>Form status: {{form.status}}</p>
-        <div *ngIf="nom.errors?.municipaliteExiste">
-            la municipalité est existante
-        </div>
+
+        <div>Date: {{date | date}}</div>
+        <div>Balance: {{ amount | currency}} </div>
+
+        <div>current locale: {{locale}}</div>
+        <div>currency code: {{codeCur}}</div>
+        <div>{{c}}</div>
 
     </form>
 </div>
